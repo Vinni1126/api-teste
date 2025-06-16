@@ -1,5 +1,5 @@
 {
-  "name": "api-cliente",
+  "name": "api-teste",
   "version": "1.0.0",
   "description": "Projeto exemplo para SonarCloud e Codemagic",
   "main": "index.js",
