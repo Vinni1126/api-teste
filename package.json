@@ -1,0 +1,11 @@
+{
+  "name": "api-cliente",
+  "version": "1.0.0",
+  "description": "Projeto exemplo para SonarCloud e Codemagic",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Vinicius Nunes",
+  "license": "MIT"
+}

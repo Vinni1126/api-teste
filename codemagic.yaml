@@ -1,0 +1,22 @@
+workflows:
+  sonarcloud:
+    name: SonarCloud Workflow
+    environment:
+      vars:
+        SONAR_TOKEN: Encrypted(seu_token_aqui)
+    scripts:
+      - name: Instalar o sonar-scanner
+        script: |
+          apt update && apt install -y openjdk-17-jdk wget unzip
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+          unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+          mv sonar-scanner-5.0.1.3006-linux sonar-scanner
+          export PATH="$PATH:$(pwd)/sonar-scanner/bin"
+      - name: Executar análise no SonarCloud
+        script: |
+          sonar-scanner \
+            -Dsonar.projectKey=viniciusnunes_api-cliente \
+            -Dsonar.organization=sua_organizacao \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=$SONAR_TOKEN
