@@ -3,7 +3,7 @@ workflows:
     name: SonarCloud Workflow
     environment:
       vars:
-        SONAR_TOKEN: Encrypted(TOKEN GERADO NO SONAR)
+        SONAR_TOKEN: Encrypted(7d91f55b20f4f072bcc1ef31eed460a18ebfc260)
     scripts:
       - name: Instalar o sonar-scanner
         script: |
