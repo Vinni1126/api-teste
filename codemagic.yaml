@@ -15,8 +15,8 @@ workflows:
       - name: Executar análise no SonarCloud
         script: |
           sonar-scanner \
-            -Dsonar.projectKey=viniciusnunes_api-cliente \
-            -Dsonar.organization=sua_organizacao \
+            -Dsonar.projectKey=viniciusnunes_api-teste \
+            -Dsonar.organization=teste_alterar \
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
