@@ -3,8 +3,7 @@ workflows:
     name: SonarCloud Workflow
     environment:
       vars:
-        SONAR_TOKEN: SONAR_TOKEN # TOKEN gerado no sonar (criado nas variáveis do Codemagic)
-    scripts:
+        SONAR_TOKEN: SONAR_TOKEN
       - name: Instalar o sonar-scanner no macOS
         script: |
           brew update
