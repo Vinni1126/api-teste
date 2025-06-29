@@ -1,7 +1,9 @@
 workflows:
   sonarcloud:
     name: SonarCloud Workflow
-    environment: {}
+    environment:  
+      vars:  
+        SONAR_TOKEN: SONAR_TOKEN
     scripts:
       - name: Instalar o sonar-scanner no macOS
         script: |
@@ -9,6 +11,8 @@ workflows:
           brew install sonar-scanner
       - name: Verificar variável de ambiente
         script: |
+          # Agora este echo deverá mostrar o prefixo do token,
+          # confirmando que a variável está disponível.
           echo "Token começa com: ${SONAR_TOKEN:0:4}***"
       - name: Executar análise no SonarCloud
         script: |
